@@ -113,30 +113,5 @@ public class Controller extends HttpServlet {
         }
     }
 
-    /*private void uploadFile(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        DiskFileItemFactory factory = new DiskFileItemFactory();// Создаём класс фабрику
-        factory.setSizeThreshold(1024 * 1024);    // Максимальный буфера данных в байтах, при превышении - запись во временную дир-ю
-        File tempDir = (File) servletContext.getAttribute("javax.servlet.context.tempdir"); // устанавливаем временную директорию
-        factory.setRepository(tempDir);
-        ServletFileUpload upload = new ServletFileUpload(factory);//Создаём сам загрузчик
-        upload.setSizeMax(1024 * 1024 * 10);    //максимальный размер данных который разрешено загружать в байтах,по умолчанию 1, без ограничений. Устанавливаем 10 мегабайт.
-        try {
-            List<FileItem> items = upload.parseRequest(request);
-            HttpSession session = request.getSession();
-            for (FileItem item : items) {
-                String requestParamName = item.getFieldName();
-                String requestParamValue = item.getString();
-                session.setAttribute(requestParamName, requestParamValue);
-            }
-            String fileName = items.get(10).getName();
-            String filePath = servletContext.getRealPath("/upload/" + new Random().nextInt() + fileName);
-            session.setAttribute("filePath", filePath);
-            File resultFile = new File(filePath);
-            resultFile.createNewFile();
-            items.get(10).write(resultFile);
-        } catch (Exception e) {
-            response.sendError(500);
-        }
-        new QuestToBaseCommand().execute(request);
-    }*/
+
 }
