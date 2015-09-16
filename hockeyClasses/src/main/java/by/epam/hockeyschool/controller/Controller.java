@@ -101,7 +101,7 @@ public class Controller extends HttpServlet {
     }
 
     /**
-     * It is performed when the servlet stops its existence.
+     * It is performed when servlet stops its existence.
      * It used to carry out finalizing actions.
      */
     public void destroy() {
