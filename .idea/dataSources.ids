@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hockey_school@localhost" uuid="b7df416a-3854-46f6-bc5f-6e5604eefda2">
+    <database-info product="MySQL" version="5.6.19" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="hockey_school"/>
+    <table name="admins" schema="" catalog="hockey_school" type="TABLE">
+      <column name="login" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="admin_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="is_owner" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7" def="YicwJw=="/>
+      <foreign-key name="admins_ibfk_1" columns="admin_id" ref-table="person" ref-schema="" ref-catalog="hockey_school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="unique_login" unique="true" columns="login"/>
+      <index name="id" unique="false" columns="admin_id"/>
+    </table>
+    <table name="coaches" schema="" catalog="hockey_school" type="TABLE">
+      <column name="defence_inc" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="attack_inc" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="coach_login" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="coach_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="coaches_ibfk_1" columns="coach_id" ref-table="person" ref-schema="" ref-catalog="hockey_school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="unique_coach_id" unique="true" columns="coach_id"/>
+      <index name="unique_login" unique="true" columns="coach_login"/>
+    </table>
+    <table name="money_transfers" schema="" catalog="hockey_school" type="TABLE">
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="sum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="operation" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="person" schema="" catalog="hockey_school" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="firstname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="admins_ibfk_1" table="admins" schema="" catalog="hockey_school" columns="admin_id"/>
+      <exported-key name="coaches_ibfk_1" table="coaches" schema="" catalog="hockey_school" columns="coach_id"/>
+      <exported-key name="physios_ibfk_1" table="physios" schema="" catalog="hockey_school" columns="physio_id"/>
+      <exported-key name="players_ibfk_1" table="players" schema="" catalog="hockey_school" columns="player_id"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="physios" schema="" catalog="hockey_school" type="TABLE">
+      <column name="speed_inc" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="strength_inc" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="physio_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="physio_login" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <foreign-key name="physios_ibfk_1" columns="physio_id" ref-table="person" ref-schema="" ref-catalog="hockey_school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id" unique="false" columns="physio_id"/>
+    </table>
+    <table name="player_questionnaire" schema="" catalog="hockey_school" type="TABLE">
+      <column name="birth_year" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="birth_place" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nationality" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="preferable_side" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
+      <column name="game_role" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="height" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="weight" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="interests" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="jersey" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="quest_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="player_questionnaire_ibfk_1" columns="quest_id" ref-table="players" ref-schema="" ref-catalog="hockey_school" ref-columns="player_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="player_id" unique="false" columns="quest_id"/>
+    </table>
+    <table name="players" schema="" catalog="hockey_school" type="TABLE">
+      <column name="defence" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="attack" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="speed" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="strength" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="location" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="player_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="player_id"/>
+      <foreign-key name="players_ibfk_1" columns="player_id" ref-table="person" ref-schema="" ref-catalog="hockey_school" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="player_questionnaire_ibfk_1" table="player_questionnaire" schema="" catalog="hockey_school" columns="quest_id"/>
+      <exported-key name="players_prices_ibfk_1" table="players_prices" schema="" catalog="hockey_school" columns="player_id"/>
+      <index name="id" unique="false" columns="player_id"/>
+    </table>
+    <table name="players_prices" schema="" catalog="hockey_school" type="TABLE">
+      <column name="player_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="players_prices_ibfk_1" columns="player_id" ref-table="players" ref-schema="" ref-catalog="hockey_school" ref-columns="player_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="unique_player_id" unique="true" columns="player_id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="hockeyWeb:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/hockeyWeb_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="hockeyWeb" />
+          <element id="module-output" name="hockeyClasses" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.6" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-all:1.3" />
+          <element id="library" level="application_server_libraries" name="Tomcat 8.0.20" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="hockeyWeb/web/Web" />
+    </root>
+  </artifact>
+</component>

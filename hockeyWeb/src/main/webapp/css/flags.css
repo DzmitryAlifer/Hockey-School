@@ -1,0 +1,32 @@
+.flag {
+	width: 18px;
+	height: 12px;
+	background:url(/image/flags.png) no-repeat
+}
+
+.flag.argentina {background-position: -18px 0}
+.flag.austria {background-position: -36px 0}
+.flag.brazil {background-position: -54px 0}
+.flag.belarus {background-position: -72px 0}
+.flag.canada {background-position: -90px 0}
+.flag.swiss {background-position: 0 -12px}
+.flag.china {background-position: -18px -12px}
+.flag.czech {background-position: -36px -12px}
+.flag.germany {background-position: -54px -12px}
+.flag.denmark {background-position: -72px -12px}
+.flag.spain {background-position: -90px -12px}
+.flag.finland {background-position: 0 -24px}
+.flag.france {background-position: -18px -24px}
+.flag.gb {background-position: -36px -24px}
+.flag.italy {background-position: -54px -24px}
+.flag.japan {background-position: -72px -24px}
+.flag.latvia {background-position: -90px -24px}
+.flag.holland {background-position: 0 -36px}
+.flag.norway {background-position: -18px -36px}
+.flag.poland {background-position: -36px -36px}
+.flag.russia {background-position: -54px -36px}
+.flag.sweden {background-position: -72px -36px}
+.flag.slovenia {background-position: -90px -36px}
+.flag.slovakia {background-position: 0 -48px}
+.flag.ukraine {background-position: -18px -48px}
+.flag.usa {background-position: -36px -48px}

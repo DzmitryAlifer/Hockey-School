@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hockeyClasses:war">
+    <output-path>$PROJECT_DIR$/hockeyClasses/target</output-path>
+    <root id="archive" name="hockeyClasses-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="hockeyClasses:war exploded" />
+    </root>
+  </artifact>
+</component>

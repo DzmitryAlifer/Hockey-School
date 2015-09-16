@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="hockeyWeb:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/hockeyWeb_war</output-path>
+    <root id="archive" name="hockeyWeb_war.war">
+      <element id="artifact" artifact-name="hockeyWeb:war exploded" />
+    </root>
+  </artifact>
+</component>
