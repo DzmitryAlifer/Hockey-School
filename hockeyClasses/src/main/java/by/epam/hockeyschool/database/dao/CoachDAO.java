@@ -61,16 +61,5 @@ public interface CoachDAO extends PersonDAO {
      */
     boolean isLoginNew(String loginHash) throws DAOException;
 
-    /**
-     * According to database, defines coach's hashed login and hashed
-     * password that conforms to its {@param id}.
-     * @param   id means coach's identification number.
-     * @return  an instance of {@code String} that consists of coach's
-     *          hashed login and hashed password.
-     * @throws  DAOException if unable to get connection to database or
-     *          if there are any troubles with query execution.
-     */
-    //String defineLogPass(int id) throws DAOException;
-
     void updateCoach(Coach coach) throws DAOException;
 }
